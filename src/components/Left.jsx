@@ -1,12 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-function Left({cart,setCart,Products}) {
-    
-            const handleRemove=(id)=>{
-               let x=cart.filter((e,i)=>{e.id!=id})
-                setCart(x)
-                console.log(cart)
-            }
+function Left({cart,setCart,Products,handleRemove}) {
 
         
   return (
@@ -26,7 +20,7 @@ function Left({cart,setCart,Products}) {
        }}>
             <button onClick={()=>handleRemove(product.id)}>-</button>
                 <ul>0</ul>
-                <button onClick={()=>{setCart(product);console.log(cart)}}>+</button>
+                <button onClick={()=>setCart(()=>{return [...cart,product] ; return cart})}>+</button>
             </div>
        </div> )}
     </div>

@@ -16,14 +16,26 @@ function App() {
     
     ];
     const [cart,setCart]=useState([]);
+
+
+    const handleRemove=(id)=>{
+      if(cart.length>0){
+
+          // let x=cart.map((e,i)=>{e.id!==id})
+          // setCart(()=>cart.map((e,i)=>{e.id!==id}))
+      }
+      console.log(cart)
+  }
+
   return (
     <div style={{
-      "display":"flex",
+      "display":"flex", "justifyContent":"space-around",
+      "alignContent":"center",
       // "justifyContent":"space-around"
      }}>
-      <Left cart={cart} setCart={setCart} Products={Products} />
+      <Left cart={cart} setCart={setCart} Products={Products} handleRemove={handleRemove} />
 
-      <Right1 cart={cart}/>
+      <Right1 cart={cart} setCart={setCart}/>
     </div>
   )
 }
